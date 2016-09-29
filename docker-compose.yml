@@ -1,10 +1,10 @@
 installer:
   build: docker-images/installer
   environment:
-    DOMAIN: dockerized-magento.local
+    DOMAIN: magento.affirm-stage.com
     MAGENTO_ROOT: /var/www/html/web
     MYSQL_HOST: mysql
-    MYSQL_DATABASE: magento
+    MYSQL_DATABASE: magentodockers
     MYSQL_USER: root
     MYSQL_PASSWORD: pw
     ADMIN_USERNAME: admin
@@ -25,8 +25,8 @@ installer:
 nginx:
   image: nginx:latest
   ports:
-    - "80:80"
-    - "443:443"
+    - "8000:80"
+    - "8001:443"
   links:
     - "php"
   volumes:
